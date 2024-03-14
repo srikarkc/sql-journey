@@ -1,0 +1,8 @@
+SELECT cust_id FROM customers;
+
+SELECT DISTINCT prod_id
+FROM orderitems;
+
+SELECT * from customers;
+
+# SELECT cust_id FROM customers;

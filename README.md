@@ -37,3 +37,25 @@ Comments can start with a '--',
 ### Sorting retrieved data
 
 'ORDER BY' clause
+
+---
+
+### Filtering data
+
+'WHERE' clause.
+
+NOTE: 'ORDER BY' should be after the 'WHERE' clause.
+
+To check 'NULL' values, you cannot use the '=' operator, need to use the 'IS NULL' clause.
+
+Rows with 'NULL' are not retured when filtering for matches or nonmatches.
+
+---
+
+### Advanced Data Filtering
+
+Operators -> 'AND' / 'OR' / 'IN'
+
+The above operators can be used to combine conditions for the 'WHERE' clause.
+
+SQL evaluate 'AND' before 'OR'.

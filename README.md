@@ -54,8 +54,37 @@ Rows with 'NULL' are not retured when filtering for matches or nonmatches.
 
 ### Advanced Data Filtering
 
-Operators -> 'AND' / 'OR' / 'IN'
+Operators -> 'AND' / 'OR' / 'IN' / 'NOT'
 
 The above operators can be used to combine conditions for the 'WHERE' clause.
 
 SQL evaluate 'AND' before 'OR'.
+
+Use parentheses to explicitly group related operators. 
+
+
+---
+
+### Wildcard Filtering
+
+'LIKE' OPERATOR
+
+Technically, LIKE is a predicate. 
+
+Wildcard characters can only be used with text fields (strings).
+
+% - match any number of occurences of any character
+
+(_) - underscore matches exactly 1 character
+
+[] - used to specify a set of characters
+
+^ - caret can be used to negative in the above set
+
+Search patters that begin with wildcards are the slowest to process.
+
+---
+
+### Calculated Fields
+
+Fields - 

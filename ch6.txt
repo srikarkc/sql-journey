@@ -1,0 +1,32 @@
+SELECT prod_id, prod_name
+FROM products
+WHERE prod_name LIKE 'Fish%';
+
+SELECT prod_id, prod_name
+FROM products
+WHERE prod_name LIKE '_ inch teddy bear';
+
+# Select all contacts whose names begin with either J or Management
+SELECT cust_contact
+FROM customers
+WHERE cust_contact LIKE '[JM]%'
+ORDER BY cust_contact;
+
+Challenges
+
+1. SELECT prod_name, prod_desc
+FROM products
+WHERE prod_desc LIKE '%toy%';
+
+2. SELECT prod_name, prod_desc
+FROM products
+WHERE prod_desc NOT LIKE '%toy%'
+ORDER BY prod_name;
+
+3. SELECT prod_name, prod_desc
+FROM products
+WHERE prod_desc LIKE '%toy%' AND prod_desc LIKE '%carrots%';
+
+4. SELECT prod_name, prod_desc
+FROM products
+WHERE prod_desc LIKE '%toy%carrots%';

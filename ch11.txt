@@ -1,0 +1,36 @@
+Challenges
+
+SELECT cust_id
+FROM orders
+WHERE order_num IN (SELECT order_num
+					FROM orderitems
+					WHERE item_price >= 10);
+
+SELECT cust_id, order_date
+FROM orders
+WHERE order_num IN (SELECT order_num
+                    FROM orderitems
+                    WHERE prod_id='BR01')
+ORDER BY order_date;
+
+SELECT cust_email FROM customers
+WHERE cust_id IN (SELECT cust_id
+				  FROM orders
+				  WHERE order_num IN (SELECT order_num
+									  FROM orderitems
+									  WHERE prod_id='BR01'));
+
+SELECT cust_id,
+		(SELECT SUM(quantity * item_price)
+		 FROM orderitems
+		 WHERE order_num IN (SELECT order_num
+							  FROM orders
+							  WHERE orders.cust_id = customers.cust_id)) AS total_ordered
+FROM customers
+ORDER BY total_ordered DESC;
+
+SELECT prod_name,
+	   (SELECT SUM(quantity)
+		FROM orderitems
+		WHERE products.prod_id = orderitems.prod_id) AS quant_sold
+FROM products;
